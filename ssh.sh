@@ -12,4 +12,4 @@ yay -S ngrok --noconfirm
 echo 'PermitRootLogin yes' >> /etc/ssh/sshd_config
 systemctl restart sshd.service
 ngrok config add-authtoken $authtoken
-ngrok tcp 22 --domain=kit-present-beetle.ngrok-free.app
+ngrok tcp 22
