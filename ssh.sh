@@ -11,5 +11,5 @@ rm *
 yay -S ngrok --noconfirm
 echo 'PermitRootLogin yes' >> /etc/ssh/sshd_config
 systemctl restart sshd.service
-ngrok authtoken $authtoken
+ngrok config add-authtoken $authtoken
 ngrok tcp 22
