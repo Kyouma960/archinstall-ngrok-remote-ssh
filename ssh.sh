@@ -7,7 +7,7 @@ git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
 cd ..
-rm *
+rm -rf yay
 yay -S ngrok --noconfirm
 echo 'PermitRootLogin yes' >> /etc/ssh/sshd_config
 systemctl restart sshd.service
