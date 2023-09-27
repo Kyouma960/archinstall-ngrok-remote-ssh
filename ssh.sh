@@ -1,7 +1,7 @@
 #!/bin/bash
-#echo 'Enter ngrok authentication token'
-#echo '-----------------------------------'
-#read -p "Token:" authtoken
+echo 'Enter ngrok authentication token'
+echo '-----------------------------------'
+read -p "Token:" authtoken
 pacman -S --needed git base-devel
 git clone https://aur.archlinux.org/yay.git
 cd yay
