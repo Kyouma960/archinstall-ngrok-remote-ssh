@@ -2,12 +2,12 @@
 echo 'Enter ngrok authentication token'
 echo '-----------------------------------'
 read -p "Token:" authtoken
-#pacman -S --needed git base-devel
-#git clone https://aur.archlinux.org/yay.git
-#cd yay
-#makepkg -si
-#cd ..
-#rm -rf yay
+pacman -S --needed git base-devel
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+cd ..
+rm -rf yay
 yay -S ngrok --noconfirm
 echo 'PermitRootLogin yes' >> /etc/ssh/sshd_config
 systemctl restart sshd.service
