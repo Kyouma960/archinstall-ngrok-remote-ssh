@@ -2,14 +2,22 @@
 echo 'Enter ngrok authentication token'
 echo '-----------------------------------'
 read -p "Token:" authtoken
+#running a system update and installing git and base-devel which is needed for the proper functioning of the code.
 sudo pacman -S --needed git base-devel
+#cloning yay aur repository
 git clone https://aur.archlinux.org/yay.git
 cd yay
+#make yay pakage build
 makepkg -si
 cd ..
+#delete yay cloned repository
 rm -rf yay
+#installing ngrok
 yay -S ngrok --noconfirm
+#allows rootlogin from remote client
 sudo echo 'PermitRootLogin yes' >> /etc/ssh/sshd_config
+#restart the ssh service to account for new changes to sshd_config
 sudo systemctl restart sshd.service
+#connect to ngrok server for accepting incoming connection request
 ngrok config add-authtoken $authtoken
 ngrok tcp 22
